@@ -5,86 +5,517 @@
     "favorite_topics": [],
     "daily_schedule": {},
     "frequently_accessed_files": {
-      "/Users/rishabhbharadwajr/Desktop/Code/NN/nn/server/server.js": 1
+      "/Users/rishabhbharadwajr/Desktop/Code/NN/nn/server/server.js": 2,
+      "/Users/rishabhbharadwajr/Desktop/Code/themis/themis-reporter-web-ui/coverage/utils/index.ts.html": 1
     },
     "preferred_responses": {}
   },
   "conversation_history": [
     {
-      "timestamp": "2025-09-12T23:34:08.085069",
+      "timestamp": "2025-09-14T22:34:28.713616",
+      "user_input": "Find my document.txt file",
+      "jarvis_response": "I can help you search for files, Mr. Bharadwaj Sir. Let me check the file system for you."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:32.074178",
       "user_input": "hello jarvis",
-      "jarvis_response": "Evening, Sir. Burning the midnight oil?"
+      "jarvis_response": "Hello, Mr. Bharadwaj. At your service."
     },
     {
-      "timestamp": "2025-09-12T23:35:06.611042",
+      "timestamp": "2025-09-14T22:35:32.093666",
+      "user_input": "thank you",
+      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:32.106416",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:34.056731",
+      "user_input": "hello",
+      "jarvis_response": "Good to see you, Mr. Bharadwaj Sir. What can I do for you?"
+    },
+    {
+      "timestamp": "2025-09-14T22:35:34.082077",
+      "user_input": "thank you",
+      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:34.102175",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:53.202055",
+      "user_input": "hello jarvis",
+      "jarvis_response": "Hello, Mr. Bharadwaj. At your service."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:53.207160",
+      "user_input": "thank you",
+      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:53.215047",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:55.077337",
+      "user_input": "hello",
+      "jarvis_response": "Good day, Mr. Bharadwaj Sir. How may I assist you?"
+    },
+    {
+      "timestamp": "2025-09-14T22:35:55.120156",
+      "user_input": "hello",
+      "jarvis_response": "Good day, Mr. Bharadwaj Sir. How may I assist you?"
+    },
+    {
+      "timestamp": "2025-09-14T22:35:55.125217",
+      "user_input": "thank you",
+      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:35:55.135036",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:42:35.740437",
+      "user_input": "hello",
+      "jarvis_response": "Hello, Mr. Bharadwaj. At your service."
+    },
+    {
+      "timestamp": "2025-09-14T22:46:17.864446",
+      "user_input": "hello",
+      "jarvis_response": "Good evening, Mr. Bharadwaj. Working late tonight?"
+    },
+    {
+      "timestamp": "2025-09-14T22:46:19.272327",
+      "user_input": "thank you",
+      "jarvis_response": "Evening, Mr. Bharadwaj Sir. Burning the midnight oil?"
+    },
+    {
+      "timestamp": "2025-09-14T22:46:20.662464",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:46 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:47:37.897933",
+      "user_input": "hello jarvis",
+      "jarvis_response": "Evening, Mr. Bharadwaj Sir. Burning the midnight oil?"
+    },
+    {
+      "timestamp": "2025-09-14T22:47:39.399917",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:47 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T22:47:40.723950",
+      "user_input": "thank you",
+      "jarvis_response": "Evening, Mr. Bharadwaj Sir. Burning the midnight oil?"
+    },
+    {
+      "timestamp": "2025-09-14T22:48:22.190484",
+      "user_input": "hello jarvis",
+      "jarvis_response": "Good evening, Mr. Bharadwaj. Working late tonight?"
+    },
+    {
+      "timestamp": "2025-09-14T22:49:52.606205",
+      "user_input": "what is the",
+      "jarvis_response": "My apologies, Mr. Bharadwaj Sir, but your query is incomplete.  Could you please elaborate on what specific information you require?"
+    },
+    {
+      "timestamp": "2025-09-14T22:50:01.041396",
       "user_input": "what is the time",
-      "jarvis_response": "The current time is 11:35 PM, Sir."
+      "jarvis_response": "The current time is 10:50 PM, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-12T23:35:20.417307",
-      "user_input": "what day is it",
-      "jarvis_response": "It is currently 11:35 PM on Friday, September 12, 2025, Sir."
+      "timestamp": "2025-09-14T22:50:21.429826",
+      "user_input": "what is today's date",
+      "jarvis_response": "Today is Sunday, September 14, 2025, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-12T23:37:57.164179",
-      "user_input": "what day is it",
-      "jarvis_response": "It is currently 11:37 PM on Friday, September 12, 2025, Sir."
+      "timestamp": "2025-09-14T22:52:10.944247",
+      "user_input": "hello jarvis",
+      "jarvis_response": "Good evening, Mr. Bharadwaj. Working late tonight?"
     },
     {
-      "timestamp": "2025-09-12T23:39:55.983247",
-      "user_input": "how are you doing",
-      "jarvis_response": "Functioning perfectly, Sir. At your service."
+      "timestamp": "2025-09-14T22:54:27.239182",
+      "user_input": "what is the time",
+      "jarvis_response": "The current time is 10:54 PM, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-12T23:40:09.950395",
-      "user_input": "what is your internal",
-      "jarvis_response": "According to Wikipedia, Sir: The Internal Revenue Service (IRS) is the revenue service for the United States federal government, which is responsible for collecting U.S. federal taxes and administering the Internal Revenue Code, the main body of the federal statutory tax law. It is an agency of the Department of the Treasury and led by the commissioner of Internal Revenue, who is appointed to a five-year term by the president of the United States. The duties of the IRS include providing tax assistance to taxpayers; pursuing and resolving instances of erroneous or fraudulent tax filings; and overseeing various benefits programs, including the Affordable Care Act."
+      "timestamp": "2025-09-14T22:54:41.841338",
+      "user_input": "what is the time",
+      "jarvis_response": "The current time is 10:54 PM, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-12T23:55:36.503495",
-      "user_input": "Hello Jarvis, how are you today?",
-      "jarvis_response": "```json\n{\n  \"intent\": \"greeting\",\n  \"confidence\": 0.95,\n  \"entities\": {\n    \"filename\": null,\n    \"location\": null,\n    \"time_reference\": null,\n    \"topic\": null,\n    \"action\": \"greet_user\"\n  },\n  \"response\": \"Good evening, Mr. Bharadwaj. I am functioning optimally, thank you for inquiring.  How may I assist you this evening?\",\n  \"action\": \"initiate_conversation\"\n}\n```"
+      "timestamp": "2025-09-14T22:55:08.212687",
+      "user_input": "hello jarvis",
+      "jarvis_response": "Good evening, Mr. Bharadwaj. How may I assist you?"
     },
     {
-      "timestamp": "2025-09-12T23:55:39.226936",
-      "user_input": "Can you find my document.txt file?",
-      "jarvis_response": "```json\n{\n  \"intent\": \"file_operation\",\n  \"confidence\": 0.98,\n  \"entities\": {\n    \"filename\": \"document.txt\",\n    \"location\": null,\n    \"time_reference\": null,\n    \"topic\": null,\n    \"action\": \"locate_file\"\n  },\n  \"response\": \"Certainly, Sir.  Locating \\\"document.txt\\\" within your indexed files. One moment please...\",\n  \"action\": \"initiate_file_search\"\n}\n```"
+      "timestamp": "2025-09-14T22:55:49.155099",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:55 PM, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-12T23:55:42.538074",
-      "user_input": "Tell me about artificial intelligence",
-      "jarvis_response": "```json\n{\n  \"intent\": \"knowledge\",\n  \"confidence\": 0.95,\n  \"entities\": {\n    \"filename\": null,\n    \"location\": null,\n    \"time_reference\": null,\n    \"topic\": \"artificial intelligence\",\n    \"action\": \"provide_information\"\n  },\n  \"response\": \"Certainly, Mr. Bharadwaj.  Artificial intelligence is a multifaceted field encompassing the development of computer systems capable of performing tasks that typically require human intelligence.  This includes learning, reasoning, problem-solving, perception, and natural language processing.  Shall I provide a more specific overview, perhaps focusing on a particular aspect of AI, Sir?\",\n  \"action\": \"initiate_wikipedia_search\"\n}\n```"
+      "timestamp": "2025-09-14T22:56:40.497245",
+      "user_input": "hello jarvis",
+      "jarvis_response": "Good evening, Mr. Bharadwaj. How may I assist you?"
     },
     {
-      "timestamp": "2025-09-12T23:55:45.325154",
-      "user_input": "What's the weather like?",
-      "jarvis_response": "```json\n{\n  \"intent\": \"weather\",\n  \"confidence\": 0.99,\n  \"entities\": {\n    \"filename\": null,\n    \"location\": \"New York\",\n    \"time_reference\": null,\n    \"topic\": null,\n    \"action\": \"retrieve_weather_information\"\n  },\n  \"response\": \"Certainly, Mr. Bharadwaj.  Retrieving current weather conditions for New York City.  One moment please...\",\n  \"action\": \"initiate_weather_api_call\"\n}\n```"
+      "timestamp": "2025-09-14T22:57:21.037623",
+      "user_input": "what is the time",
+      "jarvis_response": "The current time is 10:57 PM, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-12T23:55:48.259213",
-      "user_input": "Remember that I like coffee",
-      "jarvis_response": "```json\n{\n  \"intent\": \"personal\",\n  \"confidence\": 0.95,\n  \"entities\": {\n    \"filename\": null,\n    \"location\": null,\n    \"time_reference\": null,\n    \"topic\": \"coffee preference\",\n    \"action\": \"record_preference\"\n  },\n  \"response\": \"Certainly, Mr. Bharadwaj.  I have duly noted your preference for coffee.  This information will be readily available should you require it in the future.\",\n  \"action\": \"add_note_to_personal_profile\"\n}\n```"
+      "timestamp": "2025-09-14T22:57:40.258081",
+      "user_input": "what day is",
+      "jarvis_response": "It is currently 10:57 PM on Sunday, September 14, 2025, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-13T00:13:06.706337",
-      "user_input": "jarvis what time is it",
-      "jarvis_response": "The current time is 12:13 AM, Sir."
+      "timestamp": "2025-09-14T23:11:00.053402",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 11:11 PM, Mr. Bharadwaj Sir."
     },
     {
-      "timestamp": "2025-09-13T00:14:50.386762",
-      "user_input": "open server.js file",
-      "jarvis_response": "Opening /Users/rishabhbharadwajr/Desktop/Code/NN/nn/server/server.js, Sir."
+      "timestamp": "2025-09-14T23:11:52.870643",
+      "user_input": "how are you",
+      "jarvis_response": "Good evening, Mr. Bharadwaj. Working late tonight?"
     },
     {
-      "timestamp": "2025-09-13T00:17:43.911750",
-      "user_input": "mode",
-      "jarvis_response": "I trust everything is to your satisfaction, Mr. Bharadwaj?  Awaiting further instructions."
+      "timestamp": "2025-09-14T23:12:11.182788",
+      "user_input": "open server.js",
+      "jarvis_response": "Opening /Users/rishabhbharadwajr/Desktop/Code/NN/nn/server/server.js, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:12:27.415603",
+      "user_input": "and search google",
+      "jarvis_response": "I understand, Mr. Bharadwaj.  To assist you most effectively, could you please specify your search query for Google?"
+    },
+    {
+      "timestamp": "2025-09-14T23:12:51.252759",
+      "user_input": "are you there",
+      "jarvis_response": "Good evening, Mr. Bharadwaj. Working late tonight?"
+    },
+    {
+      "timestamp": "2025-09-14T23:13:12.382767",
+      "user_input": "open safari",
+      "jarvis_response": "I encountered an issue opening the file, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:13:23.453863",
+      "user_input": "open safari browser",
+      "jarvis_response": "I couldn't find a file named 'safari browser', Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:16:21.020979",
+      "user_input": "what is 1000 + 1000",
+      "jarvis_response": "The sum of 1000 and 1000, Mr. Bharadwaj Sir, is 2000.  A rather straightforward calculation, wouldn't you agree?"
+    },
+    {
+      "timestamp": "2025-09-14T23:20:45.077689",
+      "user_input": "open safari",
+      "jarvis_response": "I encountered an issue opening the file, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:20:53.336702",
+      "user_input": "open calculator",
+      "jarvis_response": "I couldn't find a file named 'calculator', Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:20:57.227087",
+      "user_input": "open chrome browser",
+      "jarvis_response": "I couldn't find a file named 'chrome browser', Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:21:01.613641",
+      "user_input": "launch terminal",
+      "jarvis_response": "System status, Mr. Bharadwaj Sir:\\n\u2022 CPU: 26.5%\\n\u2022 Memory: 80.3%\\n\u2022 Uptime: 24 days, 11 hours\\n\u2022 Platform: Darwin 24.6.0"
+    },
+    {
+      "timestamp": "2025-09-14T23:21:05.564403",
+      "user_input": "start mail",
+      "jarvis_response": "I found 20 files matching 'mail', Mr. Bharadwaj Sir:\\n1. gmailpostmastertools.v1beta1.json - /Users/rishabhbharadwajr/Desktop/Misc/proj/venv/lib/python3.13/site-packages/googleapiclient/discovery_cache/documents/gmailpostmastertools.v1beta1.json\\n2. gmailpostmastertools.v1beta1.json - /Users/rishabhbharadwajr/Desktop/Misc/proj/venv/lib/python3.13/site-packages/googleapiclient/discovery_cache/documents/gmailpostmastertools.v1beta1.json\\n3. gmailpostmastertools.v1.json - /Users/rishabhbharadwajr/Desktop/Misc/proj/venv/lib/python3.13/site-packages/googleapiclient/discovery_cache/documents/gmailpostmastertools.v1.json\\n4. gmailpostmastertools.v1.json - /Users/rishabhbharadwajr/Desktop/Misc/proj/venv/lib/python3.13/site-packages/googleapiclient/discovery_cache/documents/gmailpostmastertools.v1.json\\n5. gmail.v1.json - /Users/rishabhbharadwajr/Desktop/Misc/proj/venv/lib/python3.13/site-packages/googleapiclient/discovery_cache/documents/gmail.v1.json\\n... and 15 more files."
+    },
+    {
+      "timestamp": "2025-09-14T23:21:09.379960",
+      "user_input": "go to google.com",
+      "jarvis_response": "I'm afraid I couldn't locate any files matching 'google.com', Mr. Bharadwaj Sir. Perhaps it's in a different location?"
+    },
+    {
+      "timestamp": "2025-09-14T23:21:12.932235",
+      "user_input": "visit youtube",
+      "jarvis_response": "Certainly, Mr. Bharadwaj. Launching YouTube in your default browser.  I trust you will find something most agreeable."
+    },
+    {
+      "timestamp": "2025-09-14T23:21:16.620875",
+      "user_input": "navigate to github",
+      "jarvis_response": "Navigating to GitHub, Mr. Bharadwaj Sir.  One moment, please."
+    },
+    {
+      "timestamp": "2025-09-14T23:21:20.586389",
+      "user_input": "create a file called test.txt",
+      "jarvis_response": "I'm afraid I couldn't locate any files matching 'test.txt', Mr. Bharadwaj Sir. Perhaps it's in a different location?"
+    },
+    {
+      "timestamp": "2025-09-14T23:21:24.116576",
+      "user_input": "make a folder called Projects",
+      "jarvis_response": "Certainly, Mr. Bharadwaj.  Creating a folder entitled \"Projects\".  Where would you prefer this folder to reside, Sir?"
+    },
+    {
+      "timestamp": "2025-09-14T23:21:27.675761",
+      "user_input": "what's my system status",
+      "jarvis_response": "Running smoothly, Mr. Bharadwaj. How may I assist you?"
+    },
+    {
+      "timestamp": "2025-09-14T23:21:32.221470",
+      "user_input": "check cpu usage",
+      "jarvis_response": "CPU usage is currently at 19.8%, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:21:35.743349",
+      "user_input": "how's my memory",
+      "jarvis_response": "Memory usage: 77.5% of 16 GB, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:21:39.471776",
+      "user_input": "battery status",
+      "jarvis_response": "Running smoothly, Mr. Bharadwaj. How may I assist you?"
+    },
+    {
+      "timestamp": "2025-09-14T23:21:41.989811",
+      "user_input": "good morning jarvis",
+      "jarvis_response": "Late evening, Mr. Bharadwaj. I remain at your service, as always. Perhaps I could prepare a summary of today's accomplishments?"
+    },
+    {
+      "timestamp": "2025-09-14T23:21:44.530029",
+      "user_input": "thank you",
+      "jarvis_response": "Thank you, Mr. Bharadwaj. I'm delighted to be of service."
+    },
+    {
+      "timestamp": "2025-09-14T23:21:47.140613",
+      "user_input": "that's all for now",
+      "jarvis_response": "It is currently 11:21 PM on Sunday, September 14, 2025, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:22:53.990940",
+      "user_input": "open safari",
+      "jarvis_response": "Indeed, Mr. Bharadwaj Sir. I'm working on that for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:22:59.144534",
+      "user_input": "open calculator",
+      "jarvis_response": "I understand you're asking about something, Mr. Bharadwaj Sir. Let me assist you with that."
+    },
+    {
+      "timestamp": "2025-09-14T23:23:00.423173",
+      "user_input": "launch chrome",
+      "jarvis_response": "Certainly, Mr. Bharadwaj. I'll do my best to help with your request."
+    },
+    {
+      "timestamp": "2025-09-14T23:23:00.986038",
+      "user_input": "go to google.com",
+      "jarvis_response": "Certainly, Mr. Bharadwaj. I'll do my best to help with your request."
+    },
+    {
+      "timestamp": "2025-09-14T23:25:04.234584",
+      "user_input": "open safari",
+      "jarvis_response": "Absolutely, Sir. Bringing that up for you now. Safari is now open and ready for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:25:11.524337",
+      "user_input": "open calculator",
+      "jarvis_response": "Most apologetic, Mr. Bharadwaj. I'll address this matter at once. The issue was: I couldn't open calculator. Failed to open calculator: Command '['open', '/Applications/Calculator.app']' returned non-zero exit status 1."
+    },
+    {
+      "timestamp": "2025-09-14T23:25:11.988690",
+      "user_input": "launch chrome",
+      "jarvis_response": "Absolutely, Sir. Bringing that up for you now. Chrome is now open and ready for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:25:12.805187",
+      "user_input": "go to google.com",
+      "jarvis_response": "Absolutely, Sir. Bringing that up for you now. Opening google.com in your browser now."
+    },
+    {
+      "timestamp": "2025-09-14T23:25:13.010594",
+      "user_input": "create a file called test.txt",
+      "jarvis_response": "Certainly, Mr. Bharadwaj. Accessing that immediately. I've created the file 'test.txt' for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:25:13.165347",
+      "user_input": "make a folder called MyFolder",
+      "jarvis_response": "At your service, Sir. Opening it now. I've created the folder 'MyFolder' for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:27:51.444708",
+      "user_input": "what is the battery status",
+      "jarvis_response": "All systems green, Mr. Bharadwaj Sir. Ready for your commands."
+    },
+    {
+      "timestamp": "2025-09-14T23:28:14.987778",
+      "user_input": "can you please open safari and",
+      "jarvis_response": "Of course, Mr. Bharadwaj. I'll have that ready in just a moment. Safari And is now open and ready for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:29:02.009017",
+      "user_input": "i need you to open",
+      "jarvis_response": "Right away, Mr. Bharadwaj.  To which file or folder do you wish to direct my attention?"
+    },
+    {
+      "timestamp": "2025-09-14T23:29:13.124151",
+      "user_input": "i need you to open",
+      "jarvis_response": "My apologies, Mr. Bharadwaj.  I require further clarification.  Which specific file or application are you requesting, Sir?"
+    },
+    {
+      "timestamp": "2025-09-14T23:29:31.750484",
+      "user_input": "i need you to open",
+      "jarvis_response": "I do apologise, Mr. Bharadwaj, but I require further elucidation.  To which file or application do you wish to grant access, Sir?"
+    },
+    {
+      "timestamp": "2025-09-14T23:30:18.378527",
+      "user_input": "open safari and search neural network",
+      "jarvis_response": "Absolutely, Sir. Bringing that up for you now. Safari And Search Neural Network is now open and ready for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:31:10.888893",
+      "user_input": "open safari and search neural network",
+      "jarvis_response": "Opening that for you now, Mr. Bharadwaj. Safari And Search Neural Network is now open and ready for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:31:31.211465",
+      "user_input": "open safari and search",
+      "jarvis_response": "Absolutely, Sir. Bringing that up for you now. Safari And Search is now open and ready for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:32:11.764107",
+      "user_input": "what is your technical expertise",
+      "jarvis_response": "My technical expertise, Mr. Bharadwaj Sir, is rather extensive.  I possess advanced capabilities in data processing, natural language understanding, machine learning, and a multitude of other areas.  My skillset encompasses everything from sophisticated file management and system monitoring to intricate web searches and complex information retrieval. I am, if I may say so myself, quite adept at fulfilling your requests efficiently and precisely."
+    },
+    {
+      "timestamp": "2025-09-14T23:33:53.300445",
+      "user_input": "what is your technical expertise",
+      "jarvis_response": "My technical expertise, Mr. Bharadwaj Sir, is rather extensive.  I possess advanced capabilities in data processing, natural language understanding, machine learning, and a multitude of other areas.  My skillset encompasses everything from sophisticated file management and system monitoring to intricate web searches and complex information retrieval. I am, if I may say so myself, quite adept at fulfilling your requests efficiently and precisely."
+    },
+    {
+      "timestamp": "2025-09-14T23:34:58.304445",
+      "user_input": "search for neural network",
+      "jarvis_response": "There are multiple entries for 'neural network', Mr. Bharadwaj Sir. Did you mean: Net neutrality, Neutral network (evolution), Neutral network (robust)?"
+    },
+    {
+      "timestamp": "2025-09-14T23:35:14.918388",
+      "user_input": "search for neural networks on google",
+      "jarvis_response": "There are multiple entries for 'neural networks', Mr. Bharadwaj Sir. Did you mean: Net neutrality, Neutral network (evolution), Neutral network (robust)?"
+    },
+    {
+      "timestamp": "2025-09-14T23:35:43.593087",
+      "user_input": "can you search for neural networks on google chrome",
+      "jarvis_response": "There are multiple entries for 'neural networks', Mr. Bharadwaj Sir. Did you mean: Net neutrality, Neutral network (evolution), Neutral network (robust)?"
+    },
+    {
+      "timestamp": "2025-09-14T23:36:04.924662",
+      "user_input": "search for deep learning on",
+      "jarvis_response": "I couldn't find any information about 'deep learning' on Wikipedia, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:36:19.732277",
+      "user_input": "search for machine learning",
+      "jarvis_response": "I couldn't find any information about 'machine learning' on Wikipedia, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:37:03.585799",
+      "user_input": "who are you",
+      "jarvis_response": "I am JARVIS, Mr. Bharadwaj Sir, your personal AI assistant, at your service."
+    },
+    {
+      "timestamp": "2025-09-14T23:37:24.188909",
+      "user_input": "can you understand how you",
+      "jarvis_response": "That is a most intriguing question, Mr. Bharadwaj Sir.  My functionality is extensive, encompassing file management, weather forecasting, system monitoring, and knowledge retrieval from a vast array of sources, including Wikipedia. I also possess the capability for note-taking, reminders, and general conversational assistance.  My understanding is derived from the comprehensive dataset with which I have been trained, allowing me to process and respond to your requests with, I hope, suitable proficiency.  Is there a specific aspect of my capabilities you wish to explore further?"
+    },
+    {
+      "timestamp": "2025-09-14T23:38:14.709290",
+      "user_input": "yes i want to",
+      "jarvis_response": "Right away, Mr. Bharadwaj Sir.  Please elucidate upon your wishes.  I am eager to assist."
+    },
+    {
+      "timestamp": "2025-09-14T23:38:33.760439",
+      "user_input": "can you write code",
+      "jarvis_response": "Certainly, Mr. Bharadwaj Sir.  However, to craft the most appropriate code, I require further specifications.  In what programming language should I compose this code?  And what is the desired functionality or purpose of the code you require?"
+    },
+    {
+      "timestamp": "2025-09-14T23:43:21.929177",
+      "user_input": "can you please search machine learning",
+      "jarvis_response": "I couldn't find any information about 'machine learning' on Wikipedia, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:43:38.250560",
+      "user_input": "what can you tell me about machine learning",
+      "jarvis_response": "I couldn't find any information about 'machine learning' on Wikipedia, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:45:18.830583",
+      "user_input": "what is the cpu",
+      "jarvis_response": "CPU usage is currently at 30.8%, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:45:31.493312",
+      "user_input": "can you please speak what is the cpu",
+      "jarvis_response": "CPU usage is currently at 18.8%, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:45:49.651932",
+      "user_input": "what is the cpu",
+      "jarvis_response": "CPU usage is currently at 14.1%, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:56:13.092679",
+      "user_input": "search for machine learning on google",
+      "jarvis_response": "I couldn't find any information about 'machine learning' on Wikipedia, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:56:39.448910",
+      "user_input": "open index.ts in",
+      "jarvis_response": "Opening /Users/rishabhbharadwajr/Desktop/Code/themis/themis-reporter-web-ui/coverage/utils/index.ts.html, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-14T23:57:00.967874",
+      "user_input": "open calculator",
+      "jarvis_response": "Forgive me, Mr. Bharadwaj. I shall ensure this doesn't happen again. The issue was: I couldn't open calculator. Failed to open calculator: Command '['open', '/Applications/Calculator.app']' returned non-zero exit status 1."
+    },
+    {
+      "timestamp": "2025-09-14T23:57:39.435019",
+      "user_input": "are you there",
+      "jarvis_response": "Good evening, Sir. Burning the midnight oil, I see. What can I do for you? Perhaps I could prepare a summary of today's accomplishments?"
+    },
+    {
+      "timestamp": "2025-09-14T23:57:46.576405",
+      "user_input": "can you open safari",
+      "jarvis_response": "Absolutely, Sir. Bringing that up for you now. Safari is now open and ready for you."
+    },
+    {
+      "timestamp": "2025-09-14T23:58:04.870784",
+      "user_input": "can you load youtube.com on google",
+      "jarvis_response": "I'm afraid I couldn't locate any files matching 'youtube.com', Mr. Bharadwaj Sir. Perhaps it's in a different location?"
+    },
+    {
+      "timestamp": "2025-09-14T23:58:23.287547",
+      "user_input": "search youtube on google",
+      "jarvis_response": "I'm afraid I couldn't locate any files matching 'youtube.com', Mr. Bharadwaj Sir. Perhaps it's in a different location?"
+    },
+    {
+      "timestamp": "2025-09-14T23:59:06.105741",
+      "user_input": "search youtube on google",
+      "jarvis_response": "According to Wikipedia, Mr. Bharadwaj Sir: YouTube  is an American online video sharing platform owned by Google. YouTube was founded on February 14, 2005, by Chad Hurley, Jawed Karim, and Steve Chen, who were former employees of PayPal. Headquartered in San Bruno, California, it is the second-most-visited website in the world, after Google Search."
     }
   ],
   "learned_patterns": {
     "common_requests": {
-      "hello jarvis": 1,
-      "what is the time": 1,
+      "hello jarvis": 9,
+      "what is the time": 5,
       "what day is it": 2,
       "how are you doing": 1,
       "what is your internal": 1,
@@ -95,7 +526,63 @@
       "remember that i like coffee": 1,
       "jarvis what time is it": 1,
       "open server.js file": 1,
-      "mode": 1
+      "mode": 1,
+      "hello": 7,
+      "thank you": 8,
+      "what time is it": 9,
+      "hello jarvis, how are you?": 1,
+      "find my document.txt file": 1,
+      "what is the": 1,
+      "what is today's date": 1,
+      "what day is": 1,
+      "how are you": 1,
+      "open server.js": 1,
+      "and search google": 1,
+      "are you there": 2,
+      "open safari": 4,
+      "open safari browser": 1,
+      "what is 1000 + 1000": 1,
+      "open calculator": 4,
+      "open chrome browser": 1,
+      "launch terminal": 1,
+      "start mail": 1,
+      "go to google.com": 3,
+      "visit youtube": 1,
+      "navigate to github": 1,
+      "create a file called test.txt": 2,
+      "make a folder called projects": 1,
+      "what's my system status": 1,
+      "check cpu usage": 1,
+      "how's my memory": 1,
+      "battery status": 1,
+      "good morning jarvis": 1,
+      "that's all for now": 1,
+      "launch chrome": 2,
+      "make a folder called myfolder": 1,
+      "what is the battery status": 1,
+      "can you please open safari and": 1,
+      "i need you to open": 3,
+      "open safari and search neural network": 2,
+      "open safari and search": 1,
+      "what is your technical expertise": 2,
+      "search for neural network": 1,
+      "search for neural networks on google": 1,
+      "can you search for neural networks on google chrome": 1,
+      "search for deep learning on": 1,
+      "search for machine learning": 1,
+      "who are you": 1,
+      "can you understand how you": 1,
+      "yes i want to": 1,
+      "can you write code": 1,
+      "can you please search machine learning": 1,
+      "what can you tell me about machine learning": 1,
+      "what is the cpu": 2,
+      "can you please speak what is the cpu": 1,
+      "search for machine learning on google": 1,
+      "open index.ts in": 1,
+      "can you open safari": 1,
+      "can you load youtube.com on google": 1,
+      "search youtube on google": 2
     },
     "file_access_patterns": {},
     "time_based_preferences": {
@@ -106,11 +593,17 @@
         "wikipedia",
         "conversation",
         "time",
-        "file_operation"
+        "file_operation",
+        "knowledge",
+        "system",
+        "compliment",
+        "application_control",
+        "website_navigation",
+        "file_operations"
       ]
     }
   },
   "personal_notes": {},
   "important_dates": {},
-  "last_interaction": "2025-09-13T00:17:43.911809"
+  "last_interaction": "2025-09-14T23:59:06.105770"
 }

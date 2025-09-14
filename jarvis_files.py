@@ -10,6 +10,7 @@ from typing import List, Dict, Optional, Tuple
 import fnmatch
 import mimetypes
 import config
+from jarvis_speed import perf_optimizer, speed_cache, timed_execution
 
 class JarvisFileManager:
     def __init__(self):
@@ -17,8 +18,10 @@ class JarvisFileManager:
         self.file_cache = {}
         self.recently_accessed = []
 
+    @timed_execution
+    @speed_cache('file_search', ttl=600)  # Cache for 10 minutes
     def find_files(self, filename: str, search_dirs: Optional[List[str]] = None) -> List[str]:
-        """Find files matching the given filename pattern"""
+        """Find files matching the given filename pattern with caching"""
         if search_dirs is None:
             search_dirs = self.search_directories
 
@@ -158,9 +161,11 @@ class JarvisFileManager:
         except Exception as e:
             return f"Error reading file: {e}"
 
+    @timed_execution
+    @speed_cache('content_search', ttl=300)  # Cache for 5 minutes
     def search_in_files(self, search_term: str, file_pattern: str = "*", 
                        search_dirs: Optional[List[str]] = None) -> List[Dict[str, str]]:
-        """Search for text within files"""
+        """Search for text within files with caching"""
         if search_dirs is None:
             search_dirs = self.search_directories
 

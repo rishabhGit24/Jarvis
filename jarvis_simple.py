@@ -1,20 +1,11 @@
 #!/usr/bin/env python3
 """
-JARVIS - Personal AI Assistant
-A sophisticated personal assistant similar to Jarvis from Marvel movies
+JARVIS - Personal AI Assistant (Simplified Stable Version)
+A sophisticated personal assistant with reliable core functionality
 Created for Mr. Bharadwaj
 
-Features:
-- Voice recognition and British accent text-to-speech
-- File management and search capabilities
-- Weather information and forecasts
-- System monitoring and information
-- Learning and memory system
-- Natural language processing
-- Wikipedia integration
-- Personal note-taking and preferences
-
-Usage: python jarvis.py
+This version focuses on stability and core features without complex optimizations
+that might interfere with voice recognition and basic operations.
 """
 
 import sys
@@ -33,14 +24,11 @@ try:
     from rich.console import Console
     from rich.panel import Panel
     from rich.text import Text
-    from rich.live import Live
     from rich.table import Table
 
     from jarvis_voice import JarvisVoice
     from jarvis_brain import JarvisBrain
     from jarvis_memory import JarvisMemory
-    from jarvis_speed import optimize_startup, get_performance_stats, perf_optimizer
-    from jarvis_background_tasks import initialize_background_system, shutdown_background_system
     import config
 
     init(autoreset=True)  # Initialize colorama
@@ -59,8 +47,6 @@ class JarvisAssistant:
         self.running = False
         self.voice_mode = True
         self.setup_complete = False
-        self.background_task_manager = None
-        self.smart_task_router = None
 
         # Setup signal handlers for graceful shutdown
         signal.signal(signal.SIGINT, self._signal_handler)
@@ -73,42 +59,34 @@ class JarvisAssistant:
         sys.exit(0)
 
     def initialize(self) -> bool:
-        """Initialize all Jarvis systems with speed optimization"""
+        """Initialize all Jarvis systems with simple, reliable approach"""
         try:
             console.print(Panel.fit(
                 "[bold blue]JARVIS PERSONAL ASSISTANT[/bold blue]\\n"
-                "[italic]Initializing high-performance systems...[/italic]",
+                "[italic]Initializing reliable systems...[/italic]",
                 border_style="blue"
             ))
             
-            # Simple initialization for reliability
-            console.print("[yellow]⚡ Activating systems...[/yellow]")
-            
             # Initialize components sequentially for reliability
-            console.print("[cyan]• Loading systems sequentially for stability...[/cyan]")
+            console.print("[cyan]• Loading systems...[/cyan]")
             
             # Initialize memory
-            console.print("[dim]  - Initializing memory system...[/dim]")
+            console.print("[dim]  - Memory system...[/dim]")
             self.memory = JarvisMemory()
             
             # Initialize brain
-            console.print("[dim]  - Initializing AI brain...[/dim]")
+            console.print("[dim]  - AI brain...[/dim]")
             self.brain = JarvisBrain()
             
             # Initialize voice
-            console.print("[dim]  - Initializing voice system...[/dim]")
+            console.print("[dim]  - Voice system...[/dim]")
             self.voice = JarvisVoice()
             
-            # Initialize background task system
-            console.print("[dim]  - Initializing background task system...[/dim]")
-            self.background_task_manager, self.smart_task_router = initialize_background_system(self.voice, self.brain.nlp)
-            
-            if not all([self.memory, self.brain, self.voice, self.background_task_manager]):
+            if not all([self.memory, self.brain, self.voice]):
                 console.print("[red]⚠ Some components failed to initialize[/red]")
                 return False
             
-            console.print(f"[green]✅ All systems ready with enhanced user experience[/green]")
-            
+            console.print("[green]✅ All systems ready[/green]")
             self.setup_complete = True
             return True
 
@@ -150,21 +128,16 @@ class JarvisAssistant:
         current_time = datetime.now().strftime("%H:%M:%S")
 
         # Create main panel
-        title = Text("J.A.R.V.I.S.", style="bold blue")
-        subtitle = Text("Just A Rather Very Intelligent System", style="italic cyan")
-
         info_table = Table(show_header=False, box=None, padding=(0, 2))
         info_table.add_row("[bold]User:[/bold]", f"[green]{config.USER_NAME}[/green]")
         info_table.add_row("[bold]Time:[/bold]", f"[yellow]{current_time}[/yellow]")
         info_table.add_row("[bold]Status:[/bold]", "[green]All Systems Operational[/green]")
         info_table.add_row("[bold]Mode:[/bold]", "[cyan]Voice & Text Interface[/cyan]")
 
-        panel_content = f"{title}\\n{subtitle}\\n\\n{info_table}"
-
         console.print(Panel(
             info_table,
             title="[bold blue]J.A.R.V.I.S. - Personal Assistant[/bold blue]",
-            subtitle="[italic]Ready to serve, Mr. Bharadwaj Sir[/italic]",
+            subtitle="[italic]Ready to serve, Sir[/italic]",
             border_style="blue",
             padding=(1, 2)
         ))
@@ -198,7 +171,7 @@ class JarvisAssistant:
                 continue
 
     def _process_voice_command(self, command: str):
-        """Process voice command with enhanced user engagement"""
+        """Process voice command"""
         if not command or not command.strip():
             return
 
@@ -209,76 +182,28 @@ class JarvisAssistant:
             self._disable_voice_mode()
             return
 
-        # Process command through brain with background task management
-        try:
-            # Determine task type for smart routing
-            task_type = self._determine_task_type(command)
-            
-            if self.smart_task_router and task_type:
-                # Use background processing for complex tasks
-                def brain_wrapper(cmd):
-                    return self.brain.process_command(cmd)
-                
-                response = self.smart_task_router.execute_task(
-                    task_type, 
-                    brain_wrapper, 
-                    command,
-                    command
-                )
-            else:
-                # Direct processing for simple commands
-                response = self.brain.process_command(command)
-            
-            console.print(f"[green]Jarvis:[/green] {response}")
+        # Process command through brain
+        response = self.brain.process_command(command)
+        console.print(f"[green]Jarvis:[/green] {response}")
 
-            if self.voice_mode:
-                self.voice.speak(response)
-
-        except Exception as e:
-            error_response = f"I apologize, Mr. Bharadwaj Sir. I encountered an issue: {str(e)}"
-            console.print(f"[red]Jarvis:[/red] {error_response}")
-            if self.voice_mode:
-                self.voice.speak(error_response)
+        if self.voice_mode:
+            self.voice.speak(response)
 
         # Check if conversation should end
         if not self.brain.should_continue_conversation():
             self.running = False
 
     def _process_text_command(self, command: str):
-        """Process text command with enhanced user engagement"""
+        """Process text command"""
         console.print(f"[blue]You:[/blue] {command}")
 
-        # Process command through brain with background task management
-        try:
-            # Determine task type for smart routing
-            task_type = self._determine_task_type(command)
-            
-            if self.smart_task_router and task_type:
-                # Use background processing for complex tasks
-                def brain_wrapper(cmd):
-                    return self.brain.process_command(cmd)
-                
-                response = self.smart_task_router.execute_task(
-                    task_type, 
-                    brain_wrapper, 
-                    command,
-                    command
-                )
-            else:
-                # Direct processing for simple commands
-                response = self.brain.process_command(command)
-            
-            console.print(f"[green]Jarvis:[/green] {response}")
+        # Process command through brain
+        response = self.brain.process_command(command)
+        console.print(f"[green]Jarvis:[/green] {response}")
 
-            # Always speak the response if voice is available (even in text mode)
-            if self.voice:
-                self.voice.speak(response)
-
-        except Exception as e:
-            error_response = f"I apologize, Mr. Bharadwaj Sir. I encountered an issue: {str(e)}"
-            console.print(f"[red]Jarvis:[/red] {error_response}")
-            if self.voice:
-                self.voice.speak(error_response)
+        # Always speak the response if voice is available (even in text mode)
+        if self.voice:
+            self.voice.speak(response)
 
         # Check if conversation should end
         if not self.brain.should_continue_conversation():
@@ -289,7 +214,7 @@ class JarvisAssistant:
         if not self.voice_mode:
             self.voice_mode = True
             console.print("[green]Voice mode enabled. Say 'Jarvis' to activate.[/green]")
-            self.voice.speak("Voice mode enabled, Mr. Bharadwaj Sir.")
+            self.voice.speak("Voice mode enabled, Sir.")
             self.voice.start_continuous_listening(self._process_voice_command)
 
     def _disable_voice_mode(self):
@@ -298,25 +223,7 @@ class JarvisAssistant:
             self.voice_mode = False
             self.voice.stop_continuous_listening()
             console.print("[yellow]Voice mode disabled. Switching to text input.[/yellow]")
-            self.voice.speak("Switching to text mode, Mr. Bharadwaj Sir.")
-    
-    def _determine_task_type(self, command: str) -> Optional[str]:
-        """Determine the type of task for smart routing"""
-        command_lower = command.lower()
-        
-        # Map command patterns to task types
-        if any(word in command_lower for word in ['find', 'search', 'locate', 'file']):
-            return 'file_search'
-        elif any(word in command_lower for word in ['weather', 'temperature', 'forecast', 'climate']):
-            return 'weather_fetch'
-        elif any(word in command_lower for word in ['what is', 'who is', 'tell me about', 'explain', 'wikipedia']):
-            return 'wikipedia_search'
-        elif any(word in command_lower for word in ['system', 'cpu', 'memory', 'disk', 'battery', 'performance']):
-            return 'system_analysis'
-        elif len(command.split()) > 10:  # Long queries likely need AI processing
-            return 'ai_processing'
-        
-        return None  # Simple commands don't need background processing
+            self.voice.speak("Switching to text mode, Sir.")
 
     def shutdown(self):
         """Shutdown Jarvis gracefully"""
@@ -330,19 +237,7 @@ class JarvisAssistant:
             except Exception as e:
                 console.print(f"[yellow]Voice shutdown warning: {e}[/yellow]")
         
-        # Shutdown background task system
-        try:
-            shutdown_background_system()
-        except Exception as e:
-            console.print(f"[yellow]Background task system shutdown warning: {e}[/yellow]")
-        
-        # Shutdown performance optimizer
-        try:
-            perf_optimizer.shutdown()
-        except Exception as e:
-            console.print(f"[yellow]Performance optimizer shutdown warning: {e}[/yellow]")
-        
-        console.print("[green]Jarvis systems shutdown complete. Goodbye, Mr. Bharadwaj Sir.[/green]")
+        console.print("[green]Jarvis systems shutdown complete. Goodbye, Sir.[/green]")
 
     def run_diagnostics(self):
         """Run system diagnostics"""
@@ -395,44 +290,7 @@ class JarvisAssistant:
         else:
             diagnostics.add_row("Gemini AI", "⚠ Not Configured", "Set GEMINI_API_KEY for AI features")
         
-        # Performance stats
-        stats = get_performance_stats()
-        diagnostics.add_row("Performance Cache", "✓ Active", f"{stats['total_cached_items']} cached items")
-        diagnostics.add_row("Cache Hit Rate", "✓ Optimized", f"{stats.get('cache_hit_rate', 0):.1f}%")
-        
-        # Smart AI Routing stats
-        if self.brain and hasattr(self.brain, 'get_performance_stats'):
-            brain_stats = self.brain.get_performance_stats()
-            if 'nlp_stats' in brain_stats and 'routing_stats' in brain_stats['nlp_stats']:
-                routing_stats = brain_stats['nlp_stats']['routing_stats']
-                local_pct = routing_stats.get('local_percentage', 0)
-                diagnostics.add_row("Smart AI Routing", "✓ Active", f"{local_pct:.1f}% local processing")
-        
-        # Memory usage
-        if 'memory_usage_mb' in stats:
-            memory_mb = stats['memory_usage_mb']
-            diagnostics.add_row("Memory Usage", "✓ Monitored", f"{memory_mb:.1f} MB")
-        
-        # Async processing
-        async_completed = stats.get('async_tasks_completed', 0)
-        diagnostics.add_row("Async Processing", "✓ Active", f"{async_completed} tasks completed")
-        
         console.print(diagnostics)
-        
-        # Additional performance details
-        console.print("\\n[bold cyan]Performance Details:[/bold cyan]")
-        perf_table = Table(show_header=True, header_style="bold blue")
-        perf_table.add_column("Metric", style="cyan")
-        perf_table.add_column("Value", style="green")
-        
-        perf_table.add_row("Startup Time", f"{stats.get('startup_time', 0):.3f}s")
-        perf_table.add_row("Total Cache Items", str(stats.get('total_cached_items', 0)))
-        perf_table.add_row("Memory Cleanups", str(stats.get('memory_cleanups', 0)))
-        
-        if 'cpu_percent' in stats:
-            perf_table.add_row("CPU Usage", f"{stats['cpu_percent']:.1f}%")
-        
-        console.print(perf_table)
 
 def main():
     """Main entry point"""
@@ -452,9 +310,9 @@ def main():
             return
         elif sys.argv[1] == "--help":
             print("""
-JARVIS Personal Assistant
+JARVIS Personal Assistant (Simplified Version)
 
-Usage: python jarvis.py [options]
+Usage: python jarvis_simple.py [options]
 
 Options:
   --help        Show this help message

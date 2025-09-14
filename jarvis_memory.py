@@ -125,21 +125,21 @@ class JarvisMemory:
             "morning": [
                 f"Good morning, {config.USER_NAME}. I trust you slept well?",
                 f"Morning, {config.USER_NAME}. Ready to tackle the day?",
-                f"Good morning, Sir. How may I assist you today?"
+                f"Good morning, Mr. Bharadwaj Sir. How may I assist you today?"
             ],
             "afternoon": [
                 f"Good afternoon, {config.USER_NAME}. How has your day been?",
-                f"Afternoon, Sir. What can I help you with?",
+                f"Afternoon, Mr. Bharadwaj Sir. What can I help you with?",
                 f"Good afternoon, {config.USER_NAME}. At your service."
             ],
             "evening": [
                 f"Good evening, {config.USER_NAME}. I hope your day was productive.",
-                f"Evening, Sir. How may I be of assistance?",
+                f"Evening, Mr. Bharadwaj Sir. How may I be of assistance?",
                 f"Good evening, {config.USER_NAME}. Ready to wind down?"
             ],
             "night": [
                 f"Good evening, {config.USER_NAME}. Working late tonight?",
-                f"Evening, Sir. Burning the midnight oil?",
+                f"Evening, Mr. Bharadwaj Sir. Burning the midnight oil?",
                 f"Good evening, {config.USER_NAME}. How may I assist you?"
             ]
         }

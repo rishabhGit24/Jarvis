@@ -10,14 +10,14 @@ load_dotenv()
 # API Keys
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
 WEATHER_API_KEY = os.getenv('WEATHER_API_KEY', '')
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyBvBZ342r4u0XZAMhWkeZp92BXnIgFDT3M')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDn5in1JWf0SUvjMxagpldT6exjaYZCSmk')
 
 # User Settings
 USER_NAME = os.getenv('USER_NAME', 'Mr. Bharadwaj')
 USER_LOCATION = os.getenv('USER_LOCATION', 'New York')
 
 # Voice Settings
-VOICE_RATE = 180  # Speaking rate
+VOICE_RATE = 185  # Speaking rate (slower for more natural speech)
 VOICE_VOLUME = 0.9  # Volume level (0.0 to 1.0)
 BRITISH_VOICE_ID = 1  # British accent voice selection
 

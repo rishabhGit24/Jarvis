@@ -147,7 +147,7 @@ def setup_voice_test():
         
         # Test TTS
         print("🔊 Testing text-to-speech...")
-        engine.say("Voice system test successful, Sir.")
+        engine.say("Voice system test successful, Mr. Bharadwaj Sir.")
         engine.runAndWait()
         
         print("✅ Text-to-speech working")
@@ -238,7 +238,7 @@ def display_next_steps():
     print("   • 'System status report'")
     
     print(f"\n✨ Welcome to JARVIS, Mr. Bharadwaj!")
-    print("   At your service, Sir. 🎩")
+    print("   At your service, Mr. Bharadwaj Sir. 🎩")
 
 def main():
     """Main setup function"""

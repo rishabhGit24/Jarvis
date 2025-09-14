@@ -22,35 +22,71 @@ class JarvisVoice:
         self._calibrate_microphone()
 
     def _setup_tts(self) -> pyttsx3.Engine:
-        """Setup text-to-speech engine with British accent"""
+        """Setup text-to-speech engine with realistic British male voice"""
         engine = pyttsx3.init()
 
         # Get available voices
         voices = engine.getProperty('voices')
 
-        # Try to find British accent voice
-        british_voice = None
-        for voice in voices:
-            if voice.name and ('british' in voice.name.lower() or 
-                             'uk' in voice.name.lower() or 
-                             'daniel' in voice.name.lower() or
-                             'serena' in voice.name.lower()):
-                british_voice = voice
+        # Priority list for realistic British male voices
+        preferred_male_voices = [
+            'daniel',     # British English (premium quality)
+            'rishi',      # Indian English (good alternative)
+            'thomas',     # French accent (backup)
+            'xander',     # Dutch English (good quality)
+            'fred',       # System voice (fallback)
+        ]
+
+        selected_voice = None
+        
+        # First try to find preferred British male voices
+        for preferred in preferred_male_voices:
+            for voice in voices:
+                if (voice.name and preferred in voice.name.lower()):
+                    # Verify it's actually male or neutral (some voices have incorrect gender tags)
+                    gender_str = str(getattr(voice, 'gender', 'unknown')).lower()
+                    if 'male' in gender_str or 'neuter' in gender_str:
+                        selected_voice = voice
+                        print(f"Selected preferred British male voice: {voice.name}")
+                        break
+            if selected_voice:
                 break
+        
+        # If no preferred voice found, find any high-quality male voice
+        if not selected_voice:
+            male_names = ['daniel', 'thomas', 'fred', 'rishi', 'xander', 'majed', 'albert', 'alex', 'bruce', 'junior', 'ralph']
+            for voice in voices:
+                if (voice.name and any(male_name in voice.name.lower() for male_name in male_names)):
+                    selected_voice = voice
+                    print(f"Selected male voice: {voice.name}")
+                    break
+        
+        # Fallback to any voice with male gender
+        if not selected_voice:
+            for voice in voices:
+                gender_str = str(getattr(voice, 'gender', 'unknown')).lower()
+                if 'male' in gender_str:
+                    selected_voice = voice
+                    print(f"Fallback male voice: {voice.name}")
+                    break
 
-        # If no British voice found, use the second available voice (often better than default)
-        if british_voice is None and len(voices) > 1:
-            british_voice = voices[1]
-        elif british_voice is None:
-            british_voice = voices[0] if voices else None
+        # Final fallback to default
+        if not selected_voice and voices:
+            selected_voice = voices[0]
+            print(f"Using default voice: {selected_voice.name}")
 
-        if british_voice:
-            engine.setProperty('voice', british_voice.id)
-            print(f"Using voice: {british_voice.name}")
+        if selected_voice:
+            engine.setProperty('voice', selected_voice.id)
+            print(f"Voice configured: {selected_voice.name} (ID: {selected_voice.id})")
 
-        # Set voice properties
+        # Set voice properties for more natural British speech
         engine.setProperty('rate', config.VOICE_RATE)
         engine.setProperty('volume', config.VOICE_VOLUME)
+        
+        # Verify settings
+        rate = engine.getProperty('rate')
+        volume = engine.getProperty('volume')
+        print(f"TTS Settings: Rate={rate}, Volume={volume}")
 
         return engine
 
@@ -65,23 +101,97 @@ class JarvisVoice:
             print(f"Microphone calibration failed: {e}")
 
     def speak(self, text: str, interrupt_current: bool = True):
-        """Convert text to speech with British accent"""
-        if interrupt_current:
-            self.tts_engine.stop()
-
+        """Convert text to speech with realistic British male voice"""
+        if not text or not text.strip():
+            return
+            
         # Add British mannerisms and formal speech patterns
         formatted_text = self._add_british_mannerisms(text)
-
         print(f"Jarvis: {formatted_text}")
 
         try:
-            self.tts_engine.say(formatted_text)
-            self.tts_engine.runAndWait()
+            # Always create a fresh engine instance for reliability
+            import pyttsx3
+            
+            # Create new engine instance to avoid threading issues
+            speech_engine = pyttsx3.init()
+            
+            # Get available voices and set the same British male voice as main engine
+            voices = speech_engine.getProperty('voices')
+            
+            # Use the same voice selection logic as _setup_tts for British male voices
+            preferred_male_voices = ['daniel', 'rishi', 'thomas', 'xander', 'fred']
+            selected_voice = None
+            
+            # Find preferred British male voice
+            for preferred in preferred_male_voices:
+                for voice in voices:
+                    if (voice.name and preferred in voice.name.lower()):
+                        gender_str = str(getattr(voice, 'gender', 'unknown')).lower()
+                        if 'male' in gender_str or 'neuter' in gender_str:
+                            selected_voice = voice
+                            break
+                if selected_voice:
+                    break
+            
+            # Fallback to any male voice
+            if not selected_voice:
+                male_names = ['daniel', 'thomas', 'fred', 'rishi', 'xander', 'majed', 'albert', 'alex', 'bruce', 'junior', 'ralph']
+                for voice in voices:
+                    if (voice.name and any(male_name in voice.name.lower() for male_name in male_names)):
+                        selected_voice = voice
+                        break
+            
+            # Set the voice
+            if selected_voice:
+                speech_engine.setProperty('voice', selected_voice.id)
+            
+            # Copy settings from main engine
+            speech_engine.setProperty('rate', config.VOICE_RATE)
+            speech_engine.setProperty('volume', config.VOICE_VOLUME)
+            
+            # Speak the text
+            speech_engine.say(formatted_text)
+            speech_engine.runAndWait()
+            
+            # Clean up
+            speech_engine.stop()
+            del speech_engine
+            
         except Exception as e:
             print(f"Speech synthesis error: {e}")
+            # Fallback: try with basic engine
+            try:
+                import pyttsx3
+                fallback_engine = pyttsx3.init()
+                
+                # Set basic male voice (Daniel preferred)
+                voices = fallback_engine.getProperty('voices')
+                for voice in voices:
+                    if 'daniel' in voice.name.lower():
+                        fallback_engine.setProperty('voice', voice.id)
+                        break
+                else:
+                    # Fallback to any male voice
+                    male_names = ['thomas', 'fred', 'rishi', 'xander', 'majed', 'albert']
+                    for voice in voices:
+                        if any(male_name in voice.name.lower() for male_name in male_names):
+                            fallback_engine.setProperty('voice', voice.id)
+                            break
+                
+                fallback_engine.setProperty('rate', 180)
+                fallback_engine.setProperty('volume', 0.9)
+                fallback_engine.say(formatted_text)
+                fallback_engine.runAndWait()
+                fallback_engine.stop()
+                del fallback_engine
+                
+            except Exception as fallback_error:
+                print(f"Fallback TTS also failed: {fallback_error}")
+                print(f"Text that failed to speak: {formatted_text}")
 
     def _add_british_mannerisms(self, text: str) -> str:
-        """Add British speech patterns and mannerisms"""
+        """Add British speech patterns and natural mannerisms"""
         # Replace common American terms with British equivalents
         replacements = {
             "okay": "very well",
@@ -92,17 +202,42 @@ class JarvisVoice:
             "you're welcome": "my pleasure",
             "awesome": "excellent",
             "cool": "splendid",
+            "great": "brilliant",
+            "nice": "lovely",
+            "thanks": "thank you",
         }
 
         formatted_text = text
+        
+        # Apply replacements (case-insensitive)
         for american, british in replacements.items():
-            formatted_text = formatted_text.replace(american, british)
+            # Replace whole words only
+            import re
+            pattern = r'\b' + re.escape(american) + r'\b'
+            formatted_text = re.sub(pattern, british, formatted_text, flags=re.IGNORECASE)
 
-        # Add formal address if not present
-        if not any(title in formatted_text.lower() for title in ['mr.', 'sir', 'master']):
-            if formatted_text.strip() and not formatted_text.lower().startswith(('good', 'hello', 'greetings')):
-                formatted_text = f"Sir, {formatted_text.lower()}"
+        # Add natural pauses for more realistic speech (subtle)
+        formatted_text = formatted_text.replace('. ', '. ')  # Keep natural sentence breaks
+        formatted_text = formatted_text.replace('!', '!')  # Keep excitement
+        formatted_text = formatted_text.replace('?', '?')  # Keep questions natural
+        
+        # Add polite address occasionally (not always to avoid repetition)
+        import random
+        should_add_title = random.choice([True, False, False])  # 1/3 chance
+        
+        if (should_add_title and 
+            not any(title in formatted_text.lower() for title in ['mr.', 'sir', 'master']) and
+            formatted_text.strip() and 
+            not formatted_text.lower().startswith(('good', 'hello', 'greetings', 'i am', 'welcome'))):
+            
+            # Choose from various polite addresses
+            addresses = ["Mr. Bharadwaj Sir", "Sir", "Mr. Bharadwaj"]
+            chosen_address = random.choice(addresses)
+            formatted_text = f"{chosen_address}, {formatted_text.lower()}"
 
+        # Clean up any double spaces or awkward formatting
+        formatted_text = re.sub(r'\s+', ' ', formatted_text).strip()
+        
         return formatted_text
 
     def listen_once(self, timeout: int = 5) -> Optional[str]:
@@ -175,7 +310,7 @@ class JarvisVoice:
                                 if command:  # If there's a command after wake word
                                     callback_function(command)
                                 else:  # Just wake word, ask for command
-                                    self.speak("Yes, Sir? How may I assist you?")
+                                    self.speak("Yes, Mr. Bharadwaj Sir? How may I assist you?")
                                     # Listen for the actual command
                                     command_text = self.listen_once(timeout=10)
                                     if command_text:
@@ -206,7 +341,7 @@ class JarvisVoice:
         test_phrases = [
             f"Good day, {config.USER_NAME}. Voice system is operational.",
             "I am Jarvis, your personal assistant. How may I be of service?",
-            "All systems are functioning optimally, Sir."
+            "All systems are functioning optimally, Mr. Bharadwaj Sir."
         ]
 
         for phrase in test_phrases:

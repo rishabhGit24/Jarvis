@@ -225,9 +225,9 @@ class JarvisWeather:
 
         if "error" in current:
             if "API key" in current["error"]:
-                return "I apologize, Sir, but the weather service requires an API key to be configured. Please obtain a free API key from OpenWeatherMap and add it to your configuration."
+                return "I apologize, Mr. Bharadwaj Sir, but the weather service requires an API key to be configured. Please obtain a free API key from OpenWeatherMap and add it to your configuration."
             else:
-                return f"I'm sorry, Sir, but I'm unable to retrieve weather information at the moment. {current['error']}"
+                return f"I'm sorry, Mr. Bharadwaj Sir, but I'm unable to retrieve weather information at the moment. {current['error']}"
 
         # Create natural language summary
         location_name = current["location"]
@@ -245,18 +245,18 @@ class JarvisWeather:
         temp_value = float(temp.replace('°C', '').replace('°F', ''))
         if config.WEATHER_UNITS == 'metric':
             if temp_value < 0:
-                summary += "Quite cold out there, Sir. Do bundle up warmly."
+                summary += "Quite cold out there, Mr. Bharadwaj Sir. Do bundle up warmly."
             elif temp_value < 10:
-                summary += "Rather chilly today, Sir. A jacket would be advisable."
+                summary += "Rather chilly today, Mr. Bharadwaj Sir. A jacket would be advisable."
             elif temp_value > 30:
-                summary += "It's quite warm today, Sir. Perhaps stay hydrated."
+                summary += "It's quite warm today, Mr. Bharadwaj Sir. Perhaps stay hydrated."
         else:  # Fahrenheit
             if temp_value < 32:
-                summary += "Freezing conditions, Sir. Do take care when venturing out."
+                summary += "Freezing conditions, Mr. Bharadwaj Sir. Do take care when venturing out."
             elif temp_value < 50:
-                summary += "Rather cold today, Sir. Warm clothing recommended."
+                summary += "Rather cold today, Mr. Bharadwaj Sir. Warm clothing recommended."
             elif temp_value > 85:
-                summary += "Quite hot today, Sir. Do stay cool and hydrated."
+                summary += "Quite hot today, Mr. Bharadwaj Sir. Do stay cool and hydrated."
 
         return summary
 
@@ -276,4 +276,4 @@ The free tier provides:
 - 5-day weather forecast
 - 1,000 API calls per day
 
-This will enable me to provide you with comprehensive weather information, Sir."""
+This will enable me to provide you with comprehensive weather information, Mr. Bharadwaj Sir."""

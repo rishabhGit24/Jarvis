@@ -47,7 +47,7 @@ A sophisticated personal assistant inspired by Jarvis from the Marvel movies, de
 ### 🎭 Jarvis Personality
 - **British Butler Mannerisms**: Formal, polite, and sophisticated responses
 - **Time-aware Greetings**: Appropriate greetings based on time of day
-- **Personalized Interaction**: Addresses you as "Mr. Bharadwaj" and "Sir"
+- **Personalized Interaction**: Addresses you as "Mr. Bharadwaj" and "Mr. Bharadwaj Sir"
 - **Professional Demeanor**: Maintains the Jarvis character consistently
 
 ## 🚀 Quick Start
