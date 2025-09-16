@@ -6,91 +6,12 @@
     "daily_schedule": {},
     "frequently_accessed_files": {
       "/Users/rishabhbharadwajr/Desktop/Code/NN/nn/server/server.js": 2,
-      "/Users/rishabhbharadwajr/Desktop/Code/themis/themis-reporter-web-ui/coverage/utils/index.ts.html": 1
+      "/Users/rishabhbharadwajr/Desktop/Code/themis/themis-reporter-web-ui/coverage/utils/index.ts.html": 1,
+      "/Users/rishabhbharadwajr/Desktop/Code/NN/nn/WHATSAPP_BOOKING_SYSTEM.md": 1
     },
     "preferred_responses": {}
   },
   "conversation_history": [
-    {
-      "timestamp": "2025-09-14T22:34:28.713616",
-      "user_input": "Find my document.txt file",
-      "jarvis_response": "I can help you search for files, Mr. Bharadwaj Sir. Let me check the file system for you."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:32.074178",
-      "user_input": "hello jarvis",
-      "jarvis_response": "Hello, Mr. Bharadwaj. At your service."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:32.093666",
-      "user_input": "thank you",
-      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:32.106416",
-      "user_input": "what time is it",
-      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:34.056731",
-      "user_input": "hello",
-      "jarvis_response": "Good to see you, Mr. Bharadwaj Sir. What can I do for you?"
-    },
-    {
-      "timestamp": "2025-09-14T22:35:34.082077",
-      "user_input": "thank you",
-      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:34.102175",
-      "user_input": "what time is it",
-      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:53.202055",
-      "user_input": "hello jarvis",
-      "jarvis_response": "Hello, Mr. Bharadwaj. At your service."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:53.207160",
-      "user_input": "thank you",
-      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:53.215047",
-      "user_input": "what time is it",
-      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:55.077337",
-      "user_input": "hello",
-      "jarvis_response": "Good day, Mr. Bharadwaj Sir. How may I assist you?"
-    },
-    {
-      "timestamp": "2025-09-14T22:35:55.120156",
-      "user_input": "hello",
-      "jarvis_response": "Good day, Mr. Bharadwaj Sir. How may I assist you?"
-    },
-    {
-      "timestamp": "2025-09-14T22:35:55.125217",
-      "user_input": "thank you",
-      "jarvis_response": "It's my honour to serve, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:35:55.135036",
-      "user_input": "what time is it",
-      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
-    },
-    {
-      "timestamp": "2025-09-14T22:42:35.740437",
-      "user_input": "hello",
-      "jarvis_response": "Hello, Mr. Bharadwaj. At your service."
-    },
-    {
-      "timestamp": "2025-09-14T22:46:17.864446",
-      "user_input": "hello",
-      "jarvis_response": "Good evening, Mr. Bharadwaj. Working late tonight?"
-    },
     {
       "timestamp": "2025-09-14T22:46:19.272327",
       "user_input": "thank you",
@@ -510,12 +431,92 @@
       "timestamp": "2025-09-14T23:59:06.105741",
       "user_input": "search youtube on google",
       "jarvis_response": "According to Wikipedia, Mr. Bharadwaj Sir: YouTube  is an American online video sharing platform owned by Google. YouTube was founded on February 14, 2005, by Chad Hurley, Jawed Karim, and Steve Chen, who were former employees of PayPal. Headquartered in San Bruno, California, it is the second-most-visited website in the world, after Google Search."
+    },
+    {
+      "timestamp": "2025-09-15T22:42:57.181755",
+      "user_input": "open whatsapp",
+      "jarvis_response": "Opening /Users/rishabhbharadwajr/Desktop/Code/NN/nn/WHATSAPP_BOOKING_SYSTEM.md, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-15T22:44:41.453525",
+      "user_input": "what is my",
+      "jarvis_response": "Here's what I know about you, Mr. Bharadwaj Sir:\\nUser: Mr. Bharadwaj\nLocation: New York\n"
+    },
+    {
+      "timestamp": "2025-09-15T22:45:23.366634",
+      "user_input": "what do you know about me",
+      "jarvis_response": "Here's what I know about you, Mr. Bharadwaj Sir:\\nUser: Mr. Bharadwaj\nLocation: New York\n"
+    },
+    {
+      "timestamp": "2025-09-15T22:45:40.228837",
+      "user_input": "good job",
+      "jarvis_response": "Thank you, Mr. Bharadwaj. I'm delighted to be of service."
+    },
+    {
+      "timestamp": "2025-09-15T22:45:56.693945",
+      "user_input": "open whatsapp application",
+      "jarvis_response": "I couldn't find a file named 'whatsapp application', Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-16T21:53:38.534657",
+      "user_input": "can i speak to oliver",
+      "jarvis_response": "Here's what I know about you, Mr. Bharadwaj Sir:\\nUser: Mr. Bharadwaj\nLocation: New York\n"
+    },
+    {
+      "timestamp": "2025-09-16T22:28:19.111398",
+      "user_input": "what is the time",
+      "jarvis_response": "The current time is 10:28 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-16T22:29:19.385291",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:29 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-16T22:33:52.023694",
+      "user_input": "quit",
+      "jarvis_response": "Farewell, Mr. Bharadwaj Sir. It's been a pleasure assisting you."
+    },
+    {
+      "timestamp": "2025-09-16T22:35:44.050985",
+      "user_input": "what time is it",
+      "jarvis_response": "The current time is 10:35 PM, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-16T22:35:56.848075",
+      "user_input": "what day",
+      "jarvis_response": "It is currently 10:35 PM on Tuesday, September 16, 2025, Mr. Bharadwaj Sir."
+    },
+    {
+      "timestamp": "2025-09-16T22:36:30.259452",
+      "user_input": "hai",
+      "jarvis_response": "Good evening, Sir. Burning the midnight oil, I see. What can I do for you? Perhaps I could prepare a summary of today's accomplishments?"
+    },
+    {
+      "timestamp": "2025-09-16T22:37:07.576928",
+      "user_input": "tell me your capa",
+      "jarvis_response": "Running smoothly, Mr. Bharadwaj. How may I assist you?"
+    },
+    {
+      "timestamp": "2025-09-16T22:37:21.109310",
+      "user_input": "what are you capable of",
+      "jarvis_response": "I'm at your service, Mr. Bharadwaj Sir. Here's what I can assist you with:\n\n\u2022 **File Management**: \"Find report.txt\", \"Open document\", \"Search for images\"\n\u2022 **Weather Information**: \"What's the weather?\", \"Weather forecast\", \"How's it outside?\"\n\u2022 **System Information**: \"System status\", \"CPU usage\", \"Battery level\"\n\u2022 **Time & Date**: \"What time is it?\", \"What's today's date?\"\n\u2022 **Information Lookup**: \"What is quantum computing?\", \"Who is Einstein?\"\n\u2022 **Personal Notes**: \"Remember that I prefer tea\", \"Note my meeting at 3 PM\"\n\u2022 **General Conversation**: I'm here to chat and assist with various tasks\n\nSimply speak naturally, and I'll do my best to understand and assist you, Mr. Bharadwaj."
+    },
+    {
+      "timestamp": "2025-09-16T22:38:48.017335",
+      "user_input": "who is",
+      "jarvis_response": "My apologies, Mr. Bharadwaj Sir, but your query is incomplete.  To whom or what does 'who is' refer?  Please provide a name or subject for me to conduct a comprehensive search within my knowledge base."
+    },
+    {
+      "timestamp": "2025-09-16T22:39:37.857510",
+      "user_input": "who is einstein",
+      "jarvis_response": "According to Wikipedia, Mr. Bharadwaj Sir: Albert Einstein (14 March 1879 \u2013 18 April 1955) was a German-born theoretical physicist who is best known for developing the theory of relativity. Einstein also made important contributions to quantum theory. His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called \"the world's most famous equation\"."
     }
   ],
   "learned_patterns": {
     "common_requests": {
       "hello jarvis": 9,
-      "what is the time": 5,
+      "what is the time": 6,
       "what day is it": 2,
       "how are you doing": 1,
       "what is your internal": 1,
@@ -529,7 +530,7 @@
       "mode": 1,
       "hello": 7,
       "thank you": 8,
-      "what time is it": 9,
+      "what time is it": 11,
       "hello jarvis, how are you?": 1,
       "find my document.txt file": 1,
       "what is the": 1,
@@ -582,7 +583,20 @@
       "open index.ts in": 1,
       "can you open safari": 1,
       "can you load youtube.com on google": 1,
-      "search youtube on google": 2
+      "search youtube on google": 2,
+      "open whatsapp": 1,
+      "what is my": 1,
+      "what do you know about me": 1,
+      "good job": 1,
+      "open whatsapp application": 1,
+      "can i speak to oliver": 1,
+      "quit": 1,
+      "what day": 1,
+      "hai": 1,
+      "tell me your capa": 1,
+      "what are you capable of": 1,
+      "who is": 1,
+      "who is einstein": 1
     },
     "file_access_patterns": {},
     "time_based_preferences": {
@@ -599,11 +613,14 @@
         "compliment",
         "application_control",
         "website_navigation",
-        "file_operations"
+        "file_operations",
+        "personal",
+        "goodbye",
+        "help"
       ]
     }
   },
   "personal_notes": {},
   "important_dates": {},
-  "last_interaction": "2025-09-14T23:59:06.105770"
+  "last_interaction": "2025-09-16T22:39:37.857557"
 }
