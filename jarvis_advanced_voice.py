@@ -177,46 +177,46 @@ class AdvancedVoiceSystem:
             
             lang, tld = voice_map.get(voice_setting, ('en', 'com'))
             
-            print(f"🎭 Using voice: {voice_setting} (lang={lang}, tld={tld})")
+            # Minimal logging for speed
+            if not getattr(config, 'SKIP_VERBOSE_LOGGING', False):
+                print(f"🎭 Voice: {voice_setting}")
             
-            # Create TTS object with timeout and retry logic
-            max_retries = 2
+            # Create TTS object with fast processing
+            max_retries = 1  # Reduced retries for speed
             for attempt in range(max_retries):
                 try:
-                    print(f"🔄 Generating speech (attempt {attempt + 1}/{max_retries})...")
+                    # Fast generation without logging
                     tts = gTTS(text=text, lang=lang, tld=tld, slow=False)
                     
                     # Save to temporary file
                     with tempfile.NamedTemporaryFile(delete=False, suffix='.mp3') as tmp_file:
                         tts.save(tmp_file.name)
                         
-                        print(f"✅ Audio generated: {tmp_file.name}")
-                        
                         # Use afplay directly (fastest and most reliable on macOS)
                         try:
-                            print("🔊 Playing audio...")
+                            # Fast playback without logging
                             result = subprocess.run(['afplay', tmp_file.name], 
-                                                  check=True, timeout=30)
-                            print("✅ Playback completed!")
+                                                  check=True, timeout=30,
+                                                  stdout=subprocess.DEVNULL,
+                                                  stderr=subprocess.DEVNULL)
                             break  # Success, exit retry loop
                             
                         except subprocess.TimeoutExpired:
-                            print("⚠️ Playback timeout, continuing...")
                             break
-                        except subprocess.CalledProcessError as e:
-                            print(f"❌ afplay failed: {e}")
-                            # Try alternative method
+                        except subprocess.CalledProcessError:
+                            # Try alternative method silently
                             try:
-                                subprocess.run(['open', tmp_file.name], check=True)
-                                time.sleep(2)  # Give it time to start
-                                print("✅ Opened with system player")
+                                subprocess.run(['open', tmp_file.name], 
+                                             check=True,
+                                             stdout=subprocess.DEVNULL,
+                                             stderr=subprocess.DEVNULL)
+                                time.sleep(1)  # Reduced wait time
                                 break
                             except subprocess.CalledProcessError:
-                                print("❌ All playback methods failed")
+                                pass
                         
                         finally:
-                            # Clean up
-                            time.sleep(0.2)
+                            # Fast cleanup without delay
                             try:
                                 os.unlink(tmp_file.name)
                             except:
@@ -225,10 +225,9 @@ class AdvancedVoiceSystem:
                     break  # Success, exit retry loop
                     
                 except Exception as e:
-                    print(f"⚠️ Attempt {attempt + 1} failed: {e}")
                     if attempt == max_retries - 1:
-                        raise  # Last attempt failed
-                    time.sleep(1)  # Wait before retry
+                        print(f"⚠️ Speech generation failed: {e}")
+                        raise
                 
         except Exception as e:
             print(f"❌ gTTS error: {e}")

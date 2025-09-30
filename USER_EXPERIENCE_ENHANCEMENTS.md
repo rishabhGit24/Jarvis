@@ -137,7 +137,7 @@ You: "What's the weather like?"
 JARVIS: "Right away, Mr. Bharadwaj Sir. I'm consulting the meteorological services for you."
 [Processing] "Retrieving current conditions..."
 [Processing] "Processing meteorological data..."
-JARVIS: "The current weather in New York is partly cloudy, 72°F, Mr. Bharadwaj Sir. Perfect conditions for your afternoon walk. Shall I check the forecast for later today?"
+JARVIS: "The current weather in Bangalore is partly cloudy, 72°F, Mr. Bharadwaj Sir. Perfect conditions for your afternoon walk. Shall I check the forecast for later today?"
 ```
 
 ### **Complex AI Query Experience:**

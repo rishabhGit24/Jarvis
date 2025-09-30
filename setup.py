@@ -94,7 +94,7 @@ WEATHER_API_KEY=
 
 # User Settings
 USER_NAME=Mr. Bharadwaj
-USER_LOCATION=New York
+USER_LOCATION=Bangalore
 
 # Voice Settings (Advanced)
 VOICE_RATE=180

@@ -10,11 +10,11 @@ load_dotenv()
 # API Keys
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
 WEATHER_API_KEY = os.getenv('WEATHER_API_KEY', '')
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDn5in1JWf0SUvjMxagpldT6exjaYZCSmk')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDaQVdFddNnrK9AKtwJ97hWGGt5630Z6k4')
 
 # User Settings
 USER_NAME = os.getenv('USER_NAME', 'Mr. Bharadwaj')
-USER_LOCATION = os.getenv('USER_LOCATION', 'New York')
+USER_LOCATION = os.getenv('USER_LOCATION', 'Bangalore')
 
 # Voice Settings
 VOICE_RATE = 220  # Speaking rate (slower for more natural speech)
@@ -68,20 +68,47 @@ ADVANCED_VOICE_DESCRIPTION = 'English (UK) - Female'
 SELECTED_FEMALE_VOICE = 'English (UK) - Female'
 
 # SPEED OPTIMIZATION SETTINGS
-VOICE_RATE = 280  # Ultra-fast speech rate
-VOICE_VOLUME = 0.95  # Slightly higher volume for clarity at speed
+VOICE_RATE = 185  # Slower, more natural speech rate
+VOICE_VOLUME = 0.9  # Standard volume for clarity
 
 # Response Speed Settings
-FAST_RESPONSE_MODE = True  # Enable ultra-fast responses
-MAX_RESPONSE_LENGTH = 150  # Limit response length for speed
-QUICK_ACKNOWLEDGMENT = True  # Immediate acknowledgment before processing
+FAST_RESPONSE_MODE = False  # Disable ultra-fast responses for more natural pacing
+MAX_RESPONSE_LENGTH = 300  # Allow longer responses for better quality
+QUICK_ACKNOWLEDGMENT = False  # Disable immediate acknowledgment for more natural flow
 
 # AI Processing Speed
-GEMINI_TEMPERATURE = 0.3  # Lower temperature for faster, more focused responses
-GEMINI_MAX_TOKENS = 200  # Limit tokens for faster generation
-GEMINI_TIMEOUT = 5  # 5-second timeout for AI responses
+GEMINI_TEMPERATURE = 0.4  # Higher temperature for more natural, varied responses
+GEMINI_MAX_TOKENS = 300  # Allow more tokens for better quality responses
+GEMINI_TIMEOUT = 10  # Longer timeout for better responses
 
 # System Speed Settings
 SKIP_VERBOSE_LOGGING = True  # Reduce logging overhead
 FAST_STARTUP_MODE = True  # Skip non-essential initialization
 PARALLEL_PROCESSING = True  # Enable parallel task processing
+
+# LAYERED AI MODEL SETTINGS
+# Layer 1: Local Model Settings
+LAYER1_ENABLED = True  # Enable local model for simple tasks
+LAYER1_RESPONSE_TIME_LIMIT = 0.5  # Max response time for Layer 1 (seconds)
+
+# Layer 2: Stalling Model Settings
+LAYER2_ENABLED = False  # Disable stalling model for more responsive assistant
+LAYER2_MAX_STALL_TIME = 10.0  # Maximum stalling time (seconds)
+LAYER2_ENGAGEMENT_INTERVAL = 2.0  # Interval between engagement messages (seconds)
+
+# Layer 3: Gemini Model Settings
+LAYER3_ENABLED = True  # Enable Gemini model
+LAYER3_TIMEOUT = 15.0  # Timeout for Gemini requests (seconds)
+LAYER3_CACHE_SIZE = 100  # Maximum cache size for responses
+LAYER3_PERSONAL_CONTEXT = True  # Enable personal context from bio
+
+# Personal Bio Analysis Settings
+PERSONAL_BIO_FILE = 'personal_info.txt'  # Path to personal bio file
+BIO_ANALYSIS_CACHE = 'personal_bio_analysis.json'  # Cache file for bio analysis
+SENTIMENT_ANALYSIS_ENABLED = True  # Enable sentiment analysis
+PERSONALITY_TRAITS_ENABLED = True  # Enable personality trait extraction
+
+# Smart Routing Settings
+SMART_ROUTING_ENABLED = True  # Enable smart routing between layers
+ROUTING_DECISION_THRESHOLD = 0.7  # Confidence threshold for routing decisions
+FALLBACK_TO_LAYER3 = True  # Fallback to Layer 3 if other layers fail

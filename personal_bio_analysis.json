@@ -1,0 +1,130 @@
+{
+  "basic_info": {
+    "name": "Rishabh Bhardwaj R",
+    "birth_date": "31st october 2003",
+    "location": "Bangalore So I Been Brought Up In Bangalore As Well I Studied In Icse Board For School And Then State Board For Puc Then Finished Both Of Them Maybe A Slightly Aboverage Or Average Scores",
+    "interests": {
+      "technology": 4,
+      "science": 1,
+      "sports": 2,
+      "movies": 4,
+      "education": 2,
+      "career": 4,
+      "family": 2,
+      "spirituality": 1
+    },
+    "role_models": [
+      "tech movies tech industrialists like elon musk steve jobs for ratan tata einstein then scientist majorly in astrophys and time travelling like brian green ramanujan max plank i am also motivated by marvel movies including iron man",
+      "Elon Musk",
+      "Max Plank",
+      "Ratan Tata",
+      "Steve Jobs",
+      "Einstein",
+      "Brian Green",
+      "Ramanujan"
+    ],
+    "family": {
+      "father": "Ravi Krishnamurthy",
+      "mother": "R S Roopa I Love My Family",
+      "brother": "Who Is",
+      "friends": "From School Dhatri Amrita Prerana Anagha Ananya Varsha"
+    },
+    "friends": [
+      "From School Dhatri Amrita Prerana Anagha Ananya Varsha",
+      "From School Dhatri Amrita Prerana Anagha Ananya Varsha",
+      "Named Shashank Br Who Was There For Me Helping Me Get My Life Right Coincidently During Which Even He Went Through A Break Up And Then I Got Reconnected Again Back With My Old School Friend Dhatri Who Was Help Me Incredibly For For The Past"
+    ],
+    "education": {
+      "school": "Icse Board For School And Then State Board For Puc Then Finished Both Of Them Maybe A Slightly Aboverage Or Average Scores",
+      "college": "Jain College"
+    },
+    "career": {
+      "job_offers": [
+        "Cognizant For A Genc Roll Having A Compensation Of",
+        "Infosys For",
+        "Cognizant For A Genc Roll Having A Compensation Of",
+        "Visa The Company Something About Me I Love Coding If I Motivated I Will Go To The Ends Of The Earth To Finish The Job I Had A Great Mental And Have It Still Now He Is Mr Anand Panduranga Who Has Help Me Throughout My Engineering Degree Where He Was The First Person To Suggest For Change Of Branch In My First Year To A Software Branch I Have Learnt A Lot Adaring Him Taking Inspiration From Him He Has Been My Personal Motivator And I Wait To Him The Complete Progress I Have Become Over The Last"
+      ]
+    },
+    "goals": [
+      "pursue being a bachelor my whole life and dedicating my whole life towards career knowledge spirituality and spending time with my family my dad ravi krishnamurthy is an engineer in electronics same goes for my own brother sai rakshith my mom is a graduate of double degree in ma kannada i love my family i love science i love technology i am brilliant i am quick"
+    ],
+    "specific_goals": [
+      "Achieve success in career",
+      "Buy Mercedes cars",
+      "Reach epitome of success",
+      "Remain bachelor and focus on career"
+    ]
+  },
+  "sentiment_analysis": {
+    "score": 0.09090909090909091,
+    "category": "neutral",
+    "positive_words_count": 6,
+    "negative_words_count": 5,
+    "total_sentiment_words": 11
+  },
+  "personality_traits": {
+    "motivated": {
+      "strength": 1,
+      "keywords_found": [
+        "motivated"
+      ]
+    },
+    "intelligent": {
+      "strength": 3,
+      "keywords_found": [
+        "brilliant",
+        "smart",
+        "quick"
+      ]
+    },
+    "family_oriented": {
+      "strength": 2,
+      "keywords_found": [
+        "family",
+        "love my family"
+      ]
+    },
+    "tech_savvy": {
+      "strength": 5,
+      "keywords_found": [
+        "coding",
+        "technology",
+        "software",
+        "tech",
+        "ai"
+      ]
+    },
+    "goal_oriented": {
+      "strength": 3,
+      "keywords_found": [
+        "goals",
+        "success",
+        "achieve"
+      ]
+    },
+    "curious": {
+      "strength": 1,
+      "keywords_found": [
+        "learn"
+      ]
+    },
+    "empathetic": {
+      "strength": 3,
+      "keywords_found": [
+        "help",
+        "care",
+        "understand"
+      ]
+    },
+    "creative": {
+      "strength": 2,
+      "keywords_found": [
+        "create",
+        "build"
+      ]
+    }
+  },
+  "summary": "Name: Rishabh Bhardwaj R | Location: Bangalore So I Been Brought Up In Bangalore As Well I Studied In Icse Board For School And Then State Board For Puc Then Finished Both Of Them Maybe A Slightly Aboverage Or Average Scores | Born: 31st october 2003 | Key traits: Tech Savvy, Intelligent, Goal Oriented | Main interests: Technology, Movies, Career | Key goals: Achieve success in career, Buy Mercedes cars, Reach epitome of success, Remain bachelor and focus on career",
+  "sentiment_summary": "Sentiment: Neutral (Score: 0.09)"
+}

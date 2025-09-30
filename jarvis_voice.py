@@ -34,7 +34,7 @@ class JarvisVoice:
                 voice_desc = getattr(config, 'ADVANCED_VOICE_DESCRIPTION', 'English (UK) - Female')
                 self.advanced_voice.set_voice(engine, voice_desc)
                 
-                print(f"✅ Advanced voice system enabled: {engine}")
+                print(f"✅ Voice set to: {engine} - {voice_desc}")
             except Exception as e:
                 print(f"⚠️  Advanced voice failed, using system voice: {e}")
                 self.use_advanced_voice = False
@@ -144,6 +144,8 @@ class JarvisVoice:
         # Use advanced voice if available
         if self.use_advanced_voice and self.advanced_voice:
             try:
+                if not getattr(config, 'SKIP_VERBOSE_LOGGING', False):
+                    print(f"🎭 Using advanced voice: {config.ADVANCED_VOICE_ENGINE}")
                 self.advanced_voice.speak(formatted_text)
                 return
             except Exception as e:

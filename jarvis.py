@@ -41,6 +41,7 @@ try:
     from jarvis_memory import JarvisMemory
     from jarvis_speed import optimize_startup, get_performance_stats, perf_optimizer
     from jarvis_background_tasks import initialize_background_system, shutdown_background_system
+    from jarvis_enhanced_ui import enhanced_ui
     import config
 
     init(autoreset=True)  # Initialize colorama
@@ -146,31 +147,9 @@ class JarvisAssistant:
             self._signal_handler(None, None)
 
     def _display_startup_interface(self):
-        """Display the startup interface"""
-        current_time = datetime.now().strftime("%H:%M:%S")
-
-        # Create main panel
-        title = Text("J.A.R.V.I.S.", style="bold blue")
-        subtitle = Text("Just A Rather Very Intelligent System", style="italic cyan")
-
-        info_table = Table(show_header=False, box=None, padding=(0, 2))
-        info_table.add_row("[bold]User:[/bold]", f"[green]{config.USER_NAME}[/green]")
-        info_table.add_row("[bold]Time:[/bold]", f"[yellow]{current_time}[/yellow]")
-        info_table.add_row("[bold]Status:[/bold]", "[green]All Systems Operational[/green]")
-        info_table.add_row("[bold]Mode:[/bold]", "[cyan]Voice & Text Interface[/cyan]")
-
-        panel_content = f"{title}\\n{subtitle}\\n\\n{info_table}"
-
-        console.print(Panel(
-            info_table,
-            title="[bold blue]J.A.R.V.I.S. - Personal Assistant[/bold blue]",
-            subtitle="[italic]Ready to serve, Mr. Bharadwaj Sir[/italic]",
-            border_style="blue",
-            padding=(1, 2)
-        ))
-
-        # Display quick help
-        console.print("[dim]Commands: 'help' for assistance, 'quit' to exit, 'text mode' to disable voice[/dim]")
+        """Display the enhanced startup interface"""
+        enhanced_ui.display_startup_interface()
+        enhanced_ui.print_welcome_message()
 
     def _main_loop(self):
         """Main interaction loop"""
@@ -178,12 +157,15 @@ class JarvisAssistant:
             try:
                 if not self.voice_mode:
                     # Text-only mode
-                    user_input = input(f"\\n{Fore.CYAN}You: {Style.RESET_ALL}").strip()
+                    user_input = enhanced_ui.get_user_input("You: ").strip()
 
                     if user_input.lower() in ['quit', 'exit', 'goodbye']:
                         break
                     elif user_input.lower() == 'voice mode':
                         self._enable_voice_mode()
+                        continue
+                    elif user_input.lower() == 'help':
+                        enhanced_ui.display_help()
                         continue
                     elif user_input:
                         self._process_text_command(user_input)
@@ -198,21 +180,30 @@ class JarvisAssistant:
                 continue
 
     def _process_voice_command(self, command: str):
-        """Process voice command with enhanced user engagement"""
+        """Process voice command with enhanced UI"""
         if not command or not command.strip():
             return
 
-        console.print(f"[blue]You (voice):[/blue] {command}")
+        # Display user query
+        enhanced_ui.display_user_query(command, "voice")
 
         # Check for mode switching commands
         if 'text mode' in command.lower():
             self._disable_voice_mode()
             return
 
-        # Process command through brain with background task management
+        # Process command through brain with enhanced UI feedback
         try:
             # Determine task type for smart routing
             task_type = self._determine_task_type(command)
+            
+            # Display processing status
+            if task_type:
+                enhanced_ui.display_processing_status(
+                    f"Processing {task_type} request", 
+                    "router", 
+                    "Analyzing and routing to appropriate AI layer"
+                )
             
             if self.smart_task_router and task_type:
                 # Use background processing for complex tasks
@@ -229,14 +220,17 @@ class JarvisAssistant:
                 # Direct processing for simple commands
                 response = self.brain.process_command(command)
             
-            console.print(f"[green]Jarvis:[/green] {response}")
+            # Stop processing loader and display Jarvis response
+            enhanced_ui.stop_processing_loader()
+            enhanced_ui.display_jarvis_response(response, "completed", "Speaking response...")
 
             if self.voice_mode:
                 self.voice.speak(response)
 
         except Exception as e:
+            enhanced_ui.stop_processing_loader()
             error_response = f"I apologize, Mr. Bharadwaj Sir. I encountered an issue: {str(e)}"
-            console.print(f"[red]Jarvis:[/red] {error_response}")
+            enhanced_ui.display_error(error_response)
             if self.voice_mode:
                 self.voice.speak(error_response)
 
@@ -245,13 +239,22 @@ class JarvisAssistant:
             self.running = False
 
     def _process_text_command(self, command: str):
-        """Process text command with enhanced user engagement"""
-        console.print(f"[blue]You:[/blue] {command}")
+        """Process text command with enhanced UI"""
+        # Display user query
+        enhanced_ui.display_user_query(command, "text")
 
-        # Process command through brain with background task management
+        # Process command through brain with enhanced UI feedback
         try:
             # Determine task type for smart routing
             task_type = self._determine_task_type(command)
+            
+            # Display processing status
+            if task_type:
+                enhanced_ui.display_processing_status(
+                    f"Processing {task_type} request", 
+                    "router", 
+                    "Analyzing and routing to appropriate AI layer"
+                )
             
             if self.smart_task_router and task_type:
                 # Use background processing for complex tasks
@@ -268,15 +271,18 @@ class JarvisAssistant:
                 # Direct processing for simple commands
                 response = self.brain.process_command(command)
             
-            console.print(f"[green]Jarvis:[/green] {response}")
+            # Stop processing loader and display Jarvis response
+            enhanced_ui.stop_processing_loader()
+            enhanced_ui.display_jarvis_response(response, "completed", "Speaking response...")
 
             # Always speak the response if voice is available (even in text mode)
             if self.voice:
                 self.voice.speak(response)
 
         except Exception as e:
+            enhanced_ui.stop_processing_loader()
             error_response = f"I apologize, Mr. Bharadwaj Sir. I encountered an issue: {str(e)}"
-            console.print(f"[red]Jarvis:[/red] {error_response}")
+            enhanced_ui.display_error(error_response)
             if self.voice:
                 self.voice.speak(error_response)
 
@@ -288,7 +294,7 @@ class JarvisAssistant:
         """Enable voice recognition mode"""
         if not self.voice_mode:
             self.voice_mode = True
-            console.print("[green]Voice mode enabled. Say 'Jarvis' to activate.[/green]")
+            enhanced_ui.display_mode_change("Voice")
             self.voice.speak("Voice mode enabled, Mr. Bharadwaj Sir.")
             self.voice.start_continuous_listening(self._process_voice_command)
 
@@ -297,7 +303,7 @@ class JarvisAssistant:
         if self.voice_mode:
             self.voice_mode = False
             self.voice.stop_continuous_listening()
-            console.print("[yellow]Voice mode disabled. Switching to text input.[/yellow]")
+            enhanced_ui.display_mode_change("Text")
             self.voice.speak("Switching to text mode, Mr. Bharadwaj Sir.")
     
     def _determine_task_type(self, command: str) -> Optional[str]:
@@ -328,21 +334,22 @@ class JarvisAssistant:
             try:
                 self.voice.emergency_stop()
             except Exception as e:
-                console.print(f"[yellow]Voice shutdown warning: {e}[/yellow]")
+                enhanced_ui.display_error(f"Voice shutdown warning: {e}")
         
         # Shutdown background task system
         try:
             shutdown_background_system()
         except Exception as e:
-            console.print(f"[yellow]Background task system shutdown warning: {e}[/yellow]")
+            enhanced_ui.display_error(f"Background task system shutdown warning: {e}")
         
         # Shutdown performance optimizer
         try:
             perf_optimizer.shutdown()
         except Exception as e:
-            console.print(f"[yellow]Performance optimizer shutdown warning: {e}[/yellow]")
+            enhanced_ui.display_error(f"Performance optimizer shutdown warning: {e}")
         
-        console.print("[green]Jarvis systems shutdown complete. Goodbye, Mr. Bharadwaj Sir.[/green]")
+        # Display shutdown message
+        enhanced_ui.display_shutdown()
 
     def run_diagnostics(self):
         """Run system diagnostics"""

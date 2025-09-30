@@ -18,6 +18,7 @@ from jarvis_nlp import JarvisNLP
 from jarvis_speed import perf_optimizer, speed_cache, timed_execution, fast_response
 from jarvis_system_control import JarvisSystemControl
 from jarvis_butler_personality import JarvisButlerPersonality
+from jarvis_layered_ai_router import layered_ai_router
 
 class JarvisBrain:
     def __init__(self):
@@ -29,6 +30,7 @@ class JarvisBrain:
         self.butler_personality = JarvisButlerPersonality()
         self.conversation_active = False
         self.use_ai_nlp = True  # Flag to enable/disable AI NLP
+        self.layered_router = layered_ai_router  # Initialize layered AI router
 
         # Enhanced command patterns for comprehensive system control (order matters!)
         self.command_patterns = {
@@ -130,16 +132,16 @@ class JarvisBrain:
 
     @timed_execution
     def process_command(self, user_input: str) -> str:
-        """Process user input and return appropriate response using enhanced AI NLP with smart routing"""
+        """Process user input using the layered AI router system"""
         if not user_input or not user_input.strip():
             return "I didn't quite catch that, Mr. Bharadwaj Sir. Could you please repeat?"
 
         original_input = user_input.strip()
 
-        # Check for high-priority system commands first (before AI NLP)
+        # Check for high-priority system commands first (before layered routing)
         user_input_lower = original_input.lower()
         
-        # Priority system commands that should bypass AI NLP
+        # Priority system commands that should bypass layered routing
         priority_patterns = {
             'application_control': r'(?:open|launch|start|run|close|quit)\s+(?:safari|chrome|firefox|browser|calculator|calc|calendar|mail|email|notes|music|photos|finder|files|terminal|settings|preferences)',
             'system_control': r'(?:sleep|restart|shutdown|lock|volume|brightness|wifi|bluetooth|mute|unmute)',
@@ -167,59 +169,47 @@ class JarvisBrain:
                     self.memory.add_conversation(original_input, error_response)
                     return error_response
 
-        # Try AI NLP for other commands if enabled and available
-        if self.use_ai_nlp and hasattr(self.nlp, 'is_available') and self.nlp.is_available():
-            try:
-                # Get conversation context from memory
-                context = {
-                    'user_name': config.USER_NAME,
-                    'location': config.USER_LOCATION,
-                    'time': datetime.now().isoformat(),
-                    'recent_interactions': self.memory.memory_data.get('conversation_history', [])[-3:]
-                }
+        # Use layered AI router for all other commands
+        try:
+            response = self.layered_router.route_request(original_input)
+            
+            # Log interaction
+            self.memory.add_conversation(original_input, response)
+            self.memory.learn_from_interaction(original_input, 'layered_ai')
+            
+            return response
 
-                # Use AI to understand the command (simplified)
-                nlp_result = self.nlp.understand_command(original_input, context)
+        except Exception as e:
+            print(f"Layered AI router error, falling back to pattern matching: {e}")
+            
+            # Fallback to original pattern-based processing
+            user_input_lower = original_input.lower()
 
-                # Route to appropriate handler based on AI intent
-                response = self._handle_ai_intent(nlp_result, original_input)
+            # Check for command patterns
+            for command_type, (pattern, handler) in self.command_patterns.items():
+                if re.search(pattern, user_input_lower, re.IGNORECASE):
+                    try:
+                        response = handler(original_input)
+                        # Enhance response with AI if available
+                        if self.use_ai_nlp:
+                            try:
+                                response = self.nlp.enhance_personality_response(response, {
+                                    'command_type': command_type,
+                                    'user_input': original_input
+                                })
+                            except Exception:
+                                pass  # Use original response if enhancement fails
 
-                # Log interaction
-                self.memory.add_conversation(original_input, response)
-                self.memory.learn_from_interaction(original_input, nlp_result.get('intent', 'conversation'))
+                        self.memory.add_conversation(original_input, response)
+                        self.memory.learn_from_interaction(original_input, command_type)
+                        return response
+                    except Exception as e:
+                        error_response = f"I encountered an issue while processing your request, Mr. Bharadwaj Sir. {str(e)}"
+                        self.memory.add_conversation(original_input, error_response)
+                        return error_response
 
-                return response
-
-            except Exception as e:
-                print(f"AI NLP error, falling back to pattern matching: {e}")
-        # Fallback to original pattern-based processing
-        user_input_lower = original_input.lower()
-
-        # Check for command patterns
-        for command_type, (pattern, handler) in self.command_patterns.items():
-            if re.search(pattern, user_input_lower, re.IGNORECASE):
-                try:
-                    response = handler(original_input)
-                    # Enhance response with AI if available
-                    if self.use_ai_nlp:
-                        try:
-                            response = self.nlp.enhance_personality_response(response, {
-                                'command_type': command_type,
-                                'user_input': original_input
-                            })
-                        except Exception:
-                            pass  # Use original response if enhancement fails
-
-                    self.memory.add_conversation(original_input, response)
-                    self.memory.learn_from_interaction(original_input, command_type)
-                    return response
-                except Exception as e:
-                    error_response = f"I encountered an issue while processing your request, Mr. Bharadwaj Sir. {str(e)}"
-                    self.memory.add_conversation(original_input, error_response)
-                    return error_response
-
-        # If no pattern matches, try AI conversation or fallback
-        return self._handle_unknown_command(original_input)
+            # If no pattern matches, try AI conversation or fallback
+            return self._handle_unknown_command(original_input)
 
     def _handle_greeting(self, user_input: str) -> str:
         """Handle greeting commands with sophisticated butler personality"""
@@ -905,6 +895,14 @@ Simply speak naturally, and I'll do my best to understand and assist you, Mr. Bh
             'use_ai_nlp': self.use_ai_nlp
         }
         
+        # Add layered AI router stats
+        if hasattr(self.layered_router, 'get_routing_stats'):
+            stats['layered_ai_stats'] = self.layered_router.get_routing_stats()
+        
+        # Add layer status
+        if hasattr(self.layered_router, 'get_layer_status'):
+            stats['layer_status'] = self.layered_router.get_layer_status()
+        
         # Add NLP performance stats
         if hasattr(self.nlp, 'get_performance_stats'):
             stats['nlp_stats'] = self.nlp.get_performance_stats()
@@ -922,6 +920,10 @@ Simply speak naturally, and I'll do my best to understand and assist you, Mr. Bh
     def optimize_for_performance(self):
         """Optimize brain components for better performance"""
         print("⚡ Optimizing Jarvis Brain for performance...")
+        
+        # Optimize layered AI router
+        if hasattr(self.layered_router, 'optimize_routing'):
+            self.layered_router.optimize_routing()
         
         # Simple optimization
         if hasattr(self.nlp, 'optimize_for_performance'):
